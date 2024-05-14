@@ -7,7 +7,7 @@ master's thesis in information security written during the spring of 2024.
 
 - `/code`: Python source code
 - `/docs`: notes converted to HTML-format for viewing
-  [here](https://edunfelt.github.io/dsv-thesis/) process. 
+  [here](https://edunfelt.github.io/dsv-thesis/)
 - `/report/assets`: CSL-files and scripts needed to build the thesis according
   to the [plaintext-science](https://github.com/edunfelt/plaintext-science)
   method
