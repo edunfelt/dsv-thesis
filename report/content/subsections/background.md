@@ -27,5 +27,15 @@ was found to be a strong assumption which left the suggested QKD schemes
 fundamentally vulnerable to novel attacks targeting flaws in the device
 implementation.
 
-- [ ] diQKD
-- [ ] quantum programming languages
+The solution to this issue was first suggested in
+@MayersYaoQuantumCryptography1998 which introduced the concept of
+*device-independent* QKD, or diQKD. In this new paradigm, no specifics are
+given as to the implementation of the quantum devices involved. Rather, the
+security of the devices is proven based on their behavior in terms of their
+input and output. If, during the execution of the protocol, the devices are
+found to deviate from their expected behavior, the protocol is terminated as it
+could indicate an ongoing attack. In modern diQKD protocols, so-called *Bell
+tests* are often used to perform this check due to its correlation properties
+as we will explore in Section @ssec:qkd.
+
+*TODO: write about quantum programming languages and state of implementation*
