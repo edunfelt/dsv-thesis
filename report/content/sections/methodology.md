@@ -1,0 +1,2 @@
+\newpage
+## Methodology {#sec:methodology}

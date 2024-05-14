@@ -1,0 +1,40 @@
+metadata:
+  bibliography: bibliography.bib
+  csl: assets/acm-sig-proceedings-long-author-list.csl
+  link-citations: true
+filters:
+  - pandoc-xnos
+  - assets/filters/defenv.py
+  - assets/filters/linkref.py
+  - assets/filters/listing.py
+  - citeproc
+number-sections: true
+reference-links: true
+include-in-header:
+  - preamble.tex
+input-files:
+  - content/sections/intro.md
+  - content/subsections/background.md
+  - content/subsections/problem.md
+  - content/subsections/researchq.md
+  - content/subsections/basis.md
+  - content/subsections/results.md
+  - content/sections/quantum.md
+  - content/subsections/overview.md
+  - content/subsections/qit.md
+  - content/subsections/qkd.md
+  - content/sections/methodology.md
+  - content/subsections/strategy.md
+  - content/subsections/software.md
+  - content/subsections/collection.md
+  - content/subsections/analysis.md
+  - content/subsections/altstrat.md
+  - content/subsections/validity.md
+  - content/subsections/ethics.md
+  - content/sections/mainres.md
+  - content/sections/comparison.md
+  - content/sections/conclusion.md
+  - content/subsections/related.md
+  - content/subsections/delimitation.md
+  - content/subsections/implication.md
+  - content/subsections/future.md

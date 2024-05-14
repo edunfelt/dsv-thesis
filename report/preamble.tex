@@ -1,0 +1,106 @@
+\usepackage[utf8]{inputenc}
+
+%================%
+% Misc. packages %
+%================%
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{quantikz2}
+
+%======%
+% Font %
+%======%
+\usepackage[tt=false]{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage{dsfont}
+
+%========%
+% Colors %
+%========%
+\newcommand{\TODO}[1]{\begingroup\color{Maroon}#1\endgroup}
+\newcommand{\OLD}[1]{\begingroup\color{Gray}#1\endgroup}
+
+%=====================%
+% Theorem styles etc. %
+%=====================%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\numberwithin{equation}{subsection}
+
+%=================%
+% Header & footer %
+%=================%
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headsep}{0.71cm}
+
+\fancyhf{}
+\renewcommand{\subsectionmark}[1]{
+  \markright{{\thesubsection.\ #1}}}
+\fancyhead[RE, LO]{\fontsize{10}{12}\selectfont \rightmark}
+\fancyhead[LE, RO]{\thepage}
+
+%=============%
+% Titles      %
+%=============%
+\usepackage{sectsty}
+\usepackage{titlesec}
+
+% no chapter numbers
+\renewcommand{\thesection}{\arabic{section}}
+
+% sections
+\titleformat{\section}
+  {\scshape\fillast}
+  {{\thesection}.}{0.3em}{}
+\titlespacing{\section}
+  {3pc}{*3}{*2}[3pc]
+
+% subsections
+\titleformat{\subsection}[runin]
+  {\normalfont\bfseries}
+  {\S\ \thesubsection.}{.5em}{}[.]
+\titlespacing{\subsection}
+  {\parindent}{1.5ex plus .1ex minus .2ex}{5pt}
+
+%===================%
+% Table of contents %
+%===================%
+\usepackage[titles]{tocloft}
+\renewcommand{\contentsname}{\LARGE\sc{Table of contents}}
+\renewcommand{\cftsecfont}{\normalfont\bfseries}% titles in bold
+\renewcommand{\cftsecpagefont}{\normalfont\bfseries}% page numbers in bold
+
+%============%
+% References %
+%============%
+\allsectionsfont{\sc\LARGE}
+
+%=============%
+% Common sets %
+%=============%
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathop{}\mathbb{N}}
+\newcommand{\Q}{\mathop{}\mathbb{Q}}
+\newcommand{\R}{\mathop{}\mathbb{R}}
+\newcommand{\C}{\mathop{}\mathbb{C}}
+
+%==========%
+% Listings %
+%==========%
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[name=Algorithm]{listing}
+% reduce space between listing caption and actual listing, taken from:
+% https://stackoverflow.com/questions/2318598/how-to-reduce-the-seperation-from-other-text-using-latex-minted
+\setlength\partopsep{-\topsep}

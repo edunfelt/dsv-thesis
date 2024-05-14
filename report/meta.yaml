@@ -1,0 +1,22 @@
+title: "My Report"
+date: \today
+author: "Emilia Dunfelt"
+abstract: |
+    Here goes text
+reference-section-title: References
+documentclass: report
+classoption:
+- twoside
+- a4paper
+- 12pt
+- dvipsnames
+geometry:
+- left=3cm
+- right=5cm
+- bottom=4.7cm
+- top=3.3cm
+include-before:
+  - '`\newpage{}`{=latex}'
+  - '`\tableofcontents{}`{=latex}'
+  - '`\newpage{}`{=latex}'
+
