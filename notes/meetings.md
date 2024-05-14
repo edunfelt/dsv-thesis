@@ -1,4 +1,6 @@
-= 2024-01-31 =
+# Meeting notes
+
+## 2024-01-31
 
 TOPIC & RQ
 topic of thesis: evaluation and qiskit implementation of protocols in diQKD
