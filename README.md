@@ -6,13 +6,15 @@ master's thesis in information security written during the spring of 2024.
 ## Structure
 
 - `/code`: Python source code
-- `/notes`: notes and lists of things to do and meetings during the writing
-  process. [direct link](https://github.com/edunfelt/dsv-thesis/blob/main/report/build/report.pdf)
+- `/docs`: notes converted to HTML-format for viewing
+  [here](https://edunfelt.github.io/dsv-thesis/) process. 
 - `/report/assets`: CSL-files and scripts needed to build the thesis according
   to the [plaintext-science](https://github.com/edunfelt/plaintext-science)
   method
-- `/report/build`: current version of the thesis report
+- `/report/build`: current version of the thesis report [direct
+  link](https://github.com/edunfelt/dsv-thesis/blob/main/report/build/report.pdf)
 - `/report/content`: raw markdown files of the thesis report
+- `/wiki`: raw markdown notes
 
 ## Progress
 
