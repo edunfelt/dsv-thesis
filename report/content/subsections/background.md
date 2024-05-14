@@ -38,4 +38,9 @@ could indicate an ongoing attack. In modern diQKD protocols, so-called *Bell
 tests* are often used to perform this check due to its correlation properties
 as we will explore in Section @ssec:qkd.
 
-*TODO: write about quantum programming languages and state of implementation*
+Since this thesis will focus on the implementation and simulation of diQKD
+protocols we here also include a note on quantum programming and techniques for
+simulation. Much like for classical computers, to execute operations on quantum
+processors, a quantum instruction instruction set is utilized. Today, there is
+a large number of offerings in this area from a number of large corporations and
+organizations.
