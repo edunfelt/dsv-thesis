@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="date" content="21 May 2024" scheme="YYYY-MM-DD">
         <meta name="viewport" content="width=device-width" />
-        <title>Index</title>
+        <title>Protocols</title>
         <link rel="stylesheet" href="./style.css" type="text/css"
          media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="./pygmentize.css" type="text/css"
@@ -32,24 +32,38 @@ MathJax = {
     <hr>
     <div class="content">
     <h1>
-<a id="masters-thesis-2024-information-security" class="anchor" href="#masters-thesis-2024-information-security" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Master's Thesis 2024: Information Security</h1>
+<a id="qkd-protocols" class="anchor" href="#qkd-protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QKD Protocols</h1>
+<p>Wikipedia has a <a href="https://en.wikipedia.org/wiki/List_of_quantum_key_distribution_protocols">useful
+list</a>
+of protocols that exist since BB84.</p>
+<p>The survey by Kumar &amp; Garhwal is also incredibly useful to understand the current
+landscape.</p>
 <h2>
-<a id="quick-links" class="anchor" href="#quick-links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick links</h2>
+<a id="entanglement-based-protocols" class="anchor" href="#entanglement-based-protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Entanglement-based protocols</h2>
+<p>The first diQKD protocol, E91, was suggested by Ekert in 1991. There are several
+modifications made to this protocol, but they all seem to build on the same
+idea with slight changes to improve security etc. These include:</p>
 <ul>
-<li><a href="running-todo.html">running todo</a></li>
-<li><a href="things-to-define.html">things to define</a></li>
-<li><a href="questions.html">questions</a></li>
+<li>Ekert 1991</li>
+<li>Acín et al. 2009 (based on 2006 idea)</li>
+<li>Vazirani &amp; Vidick 2019</li>
+<li>Nadlinger 2022</li>
 </ul>
+<p>The article by Zapatero et al. from 2023 summarizes the state-of-the-art in the
+field of diQKD and can be consulted to read further about the different
+implementations of the CHSH key-distribution protocol that exists.</p>
+<p>Basically, any non-local game with proven quantum advantage could be used. An
+idea here is to look into other games for which I can derive a test of
+entanglement. However, it is not clear to me how using another game could be
+advantageous. Nonetheless, it might be of interest to the community to know
+about different possibilities.</p>
+<p>There are also variations of other QKD protocols that use entanglement as an
+alternative method instead of one party being the source. These protocols include
+BB84, SSP, and SARG04.</p>
 <h2>
-<a id="deadlines" class="anchor" href="#deadlines" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deadlines</h2>
-<ul>
-<li>May 27th: submit chapters 1-3</li>
-</ul>
-<h2>
-<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notes</h2>
-<ul>
-<li><a href="protocols.html">protocols</a></li>
-</ul>
+<a id="uncertainty-based-protocols" class="anchor" href="#uncertainty-based-protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Uncertainty-based protocols</h2>
+<p>Other protocols that do not rely on entanglement include the original BB84, BBM92,
+B92, the six-state protocol, SARG04, and the COW protocol.</p>
 
     </div>
     </body>
