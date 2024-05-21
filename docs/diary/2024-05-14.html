@@ -1,41 +1,191 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>-</title>
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <link rel="stylesheet" href="style.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
-</head>
-<body>
-<h1 id="section">2024-05-14</h1>
-<p>Added the wiki with diary today, and made sure everything is
-git-managed to prevent loss of work and ensure easier collaboration in
-the future.</p>
-<p>Worked on the introduction section and wrote on the background
-section here, introducing QKD and some information on the history of
-this area. The Wikipedia articles on the bell state and QKD where quite
-helpful to find some relevant resources, as well as the article by
-Vazirani and Vidick.</p>
-</body>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="date" content="15 May 2024" scheme="YYYY-MM-DD">
+        <meta name="viewport" content="width=device-width" />
+        <title>2024-05-14</title>
+        <link rel="stylesheet" href="../style.css" type="text/css"
+         media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../pygmentize.css" type="text/css"
+         media="screen" title="no title" charset="utf-8">
+         <script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<style>
+.content {padding-right: 25vw; max-width: 800px}
+</style>
+    </head>
+    <body>
+    <a href="../index.html">Index</a> |
+    <a href="../diary/diary.html">Meeting notes</a>
+    <hr>
+    <div class="content">
+    <h1>
+<a id="2024-05-14" class="anchor" href="#2024-05-14" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2024-05-14</h1>
+<p>Added the wiki with diary today, and made sure everything is git-managed to
+prevent loss of work and ensure easier collaboration in the future.</p>
+<p>Worked on the introduction section and wrote on the background section here,
+introducing QKD and some information on the history of this area. The Wikipedia
+articles on the bell state and QKD where quite helpful to find some relevant
+resources, as well as the article by Vazirani and Vidick.</p>
+<hr>
+<p>Finished the background section draft for now. Thinking about the actual
+research problem and question I want to work on. It is now time to really
+review the literature in depth in order to nail down the question and the
+method by which it can be answered. I see thee possible outcomes of this:</p>
+<ol>
+<li>There are a number of diQKD protocols that I can work to implement in
+Qiskit and compare some property of them.</li>
+<li>All current diQKD protocols are based on the same algorithm and only
+differ in their physical implementation, which I cannot investigate due
+to resource limitations. Instead, I can compare QKD protocols in general
+and implement these in Qiskit.</li>
+<li>All current diQKD protocols are based on the same algorithm and only
+differ in their physical implementation, which I cannot investigate due
+to resource limitations. Instead, I can compare existing QKD protocols
+and implement some attacks on these in Qiskit.</li>
+</ol>
+<p>The second and third option can also be combined so that I implement some
+protocols as well as investigate attacks on them. In any case, I believe that
+this will still turn out a fruitful project, even if it differs slightly from
+what I originally set out to do.</p>
+<p>The research problem as I wrote it down some months ago was:</p>
+<blockquote>
+<p>Evaluation and performance evaluation of protocols in diQKD implemented
+in Qiskit.</p>
+</blockquote>
+<p>The two research questions I wrote down around the same time were:</p>
+<ul>
+<li>Which parameters for performance evaluation exist in Qiskit to compare
+protocols in diQKD?</li>
+<li>How does protocols in diQKD perform and compare along these parameters?</li>
+</ul>
+
+    </div>
+    </body>
+<style type="text/css">
+        .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #24292f;
+  background-color: #f6f8fa;
+}
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv {
+  color: #cf222e;
+}
+.highlight .gr {
+  color: #f6f8fa;
+}
+.highlight .gd {
+  color: #82071e;
+  background-color: #ffebe9;
+}
+.highlight .nb {
+  color: #953800;
+}
+.highlight .nc {
+  color: #953800;
+}
+.highlight .no {
+  color: #953800;
+}
+.highlight .nn {
+  color: #953800;
+}
+.highlight .sr {
+  color: #116329;
+}
+.highlight .na {
+  color: #116329;
+}
+.highlight .nt {
+  color: #116329;
+}
+.highlight .gi {
+  color: #116329;
+  background-color: #dafbe1;
+}
+.highlight .kc {
+  color: #0550ae;
+}
+.highlight .l, .highlight .ld, .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #0550ae;
+}
+.highlight .sb {
+  color: #0550ae;
+}
+.highlight .bp {
+  color: #0550ae;
+}
+.highlight .ne {
+  color: #0550ae;
+}
+.highlight .nl {
+  color: #0550ae;
+}
+.highlight .py {
+  color: #0550ae;
+}
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm {
+  color: #0550ae;
+}
+.highlight .o, .highlight .ow {
+  color: #0550ae;
+}
+.highlight .gh {
+  color: #0550ae;
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #0550ae;
+  font-weight: bold;
+}
+.highlight .s, .highlight .sa, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .sx, .highlight .s1, .highlight .ss {
+  color: #0a3069;
+}
+.highlight .nd {
+  color: #8250df;
+}
+.highlight .nf, .highlight .fm {
+  color: #8250df;
+}
+.highlight .err {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cp, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #6e7781;
+}
+.highlight .gl {
+  color: #6e7781;
+}
+.highlight .gt {
+  color: #6e7781;
+}
+.highlight .ni {
+  color: #24292f;
+}
+.highlight .si {
+  color: #24292f;
+}
+.highlight .ge {
+  color: #24292f;
+  font-style: italic;
+}
+.highlight .gs {
+  color: #24292f;
+  font-weight: bold;
+}
+      </style>
 </html>
