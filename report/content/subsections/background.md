@@ -35,7 +35,7 @@ behavior in terms of their input and output. If, during the execution of the
 protocol, the devices are found to deviate from their expected behavior, the
 protocol is terminated as it could indicate an ongoing attack. In modern diQKD
 protocols, so-called *Bell tests* are often used to perform this check due to
-its correlation properties as we will explore in Section @ssec:qkd. The major
+its correlation properties as we will explore in Section @ssec:games. The major
 drawback to diQKD is that the implementation of such protocols often is less
 clear than in their device-dependent counterparts as it requires the
 implementation of so-called loophole-free Bell tests, as we will discuss later.

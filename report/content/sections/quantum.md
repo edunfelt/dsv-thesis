@@ -1,1 +1,1 @@
-## Quantum Information \& Key Distribution {#sec:quantum}
+## Quantum Information Theory {#sec:quantum}
