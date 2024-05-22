@@ -6,7 +6,8 @@
 - [X] entanglement and the Bell pair
 - [X] quantum circuit notation
 - [ ] superposition
-- [ ] non-local games
+- [ ] Heisenberg's uncertainty principle
+- [ ] non-local games (CHSH game)
 - [ ] quantum cryptography
 - [ ] key distribution
 - [ ] one-time pad

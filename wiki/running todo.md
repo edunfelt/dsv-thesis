@@ -5,3 +5,4 @@ not forget them when time comes.
 
 - [ ] give examples of all things quantum
 - [ ] chsh game figure
+- [ ] split chapter 2 into two parts (qit and qkd) with subsections
