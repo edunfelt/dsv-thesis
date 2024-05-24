@@ -21,8 +21,8 @@ master's thesis in information security written during the spring of 2024.
 ### Report
 
 - [X] Introduction
-- [ ] Quantum Information & Key Distribution
-- [ ] Methodology
+- [X] Quantum Information & Key Distribution
+- [X] Methodology
 - [ ] Main Results
 - [ ] Comparison with Existing Work
 - [ ] Conclusion
