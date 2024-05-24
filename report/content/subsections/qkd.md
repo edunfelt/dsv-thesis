@@ -1,3 +1,3 @@
-### Quantum Cryptography {#ssec:qkd}
+### Quantum Key Distribution {#ssec:qkd}
 
 Text

@@ -20,11 +20,10 @@ input-files:
   - content/subsections/basis.md
   - content/subsections/results.md
   - content/sections/quantum.md
-  - content/subsections/overview-qit.md
+  - content/subsections/overview.md
   - content/subsections/qit.md
   - content/subsections/games.md
-  - content/sections/keys.md
-  - content/subsections/overview-keys.md
+  - content/subsections/qkd.md
   - content/sections/methodology.md
   - content/subsections/strategy.md
   - content/subsections/software.md

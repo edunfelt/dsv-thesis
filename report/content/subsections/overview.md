@@ -19,5 +19,7 @@ concept of entanglement and quantum non-local games which is used in our later
 endeavors both to generate keys as well as to verify the existence of
 entanglement. These are the main building blocks of the thesis and are
 necessary to both understand the historical as well as the theoretical
-background on which protocols in QKD are built.
+background on which protocols in QKD are built. Finally, Section @ssec:qkd
+covers the primary protocols and techniques that exist in the field of QKD,
+which will be further examined and simulated in Chapter @sec:mainres.
 
