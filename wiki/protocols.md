@@ -19,7 +19,7 @@ The intention is to explain and implement the following protocols:
 - [Six-state protocol](Six-state protocol) (explanation)
 - [SARG04](SARG04) (explanation)
 - [COW protocol](COW protocol) (implementation)
-- T12 (explanation)
+- [T12](T12) (explanation)
 
 ## Entanglement-based protocols
 
