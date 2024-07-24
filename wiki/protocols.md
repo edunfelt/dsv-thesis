@@ -14,7 +14,7 @@ The intention is to explain and implement the following protocols:
 - [BB84](BB84.md)(implementation)
   here also the modifications made in [B92](B92.md)
 - [E91](E91.md) (implementation)
-- BBM92 (implementation)
+- [BBM92](BBM92.md) (implementation)
   this is the entanglement-based version of E91
 - Six-state protocol (explanation)
 - SARG04 (explanation)
