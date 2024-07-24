@@ -12,7 +12,7 @@ entanglement based and uncertainty based protocols, and proceed chronologically.
 The intention is to explain and implement the following protocols:
 
 - [BB84](BB84.md)(implementation)
-  here also the modifications made in B92
+  here also the modifications made in [B92](B92.md)
 - E91 (implementation)
 - BBM92 (implementation)
   this is the entanglement-based version of E91
