@@ -17,7 +17,7 @@ The intention is to explain and implement the following protocols:
 - [BBM92](BBM92) (implementation)
   this is the entanglement-based version of E91
 - [Six-state protocol](Six-state protocol) (explanation)
-- SARG04 (explanation)
+- [SARG04](SARG04) (explanation)
 - COW protocol (implementation)
 - T12 (explanation)
 
