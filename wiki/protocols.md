@@ -7,6 +7,20 @@ of protocols that exist since BB84.
 The survey by Kumar & Garhwal is also incredibly useful to understand the current
 landscape. 
 
+In this thesis, we focus on the most important protocols in the timeline of
+entanglement based and uncertainty based protocols, and proceed chronologically.
+The intention is to explain and implement the following protocols:
+
+- BB84 (implementation)
+  here also the modifications made in B92
+- E91 (implementation)
+- BBM92 (implementation)
+  this is the entanglement-based version of E91
+- Six-state protocol (explanation)
+- SARG04 (explanation)
+- COW protocol (implementation)
+- T12 (explanation)
+
 ## Entanglement-based protocols
 
 The first diQKD protocol, E91, was suggested by Ekert in 1991. There are several
