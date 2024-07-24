@@ -9,6 +9,10 @@ which differ from BB84:
 3. Alice chooses $n$ random bases, either the standard or the Hadamard basis
    and Bob does the same. They both measure the state using their selected
    bases and then publish the basis selection.
-4. Both Alice and Bob keep the qubits on which they measured in the same
-   basis and discard the rest.
-5. 
+4. Both Alice and Bob keep the $k$ qubits on which they measured in the same basis
+   and discard the rest. 
+5. Alice randomly chooses a subset $I$ of indices of the remaining qubits, of
+   size $k / 2$ and sends these to Bob.
+6. Alice and Bob compare whether their bits on these indices agree above a
+   predetermined threshold. If they do, the remaining bits can be used as a
+   shared secret key.
