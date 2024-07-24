@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="date" content="24 Jul 2024" scheme="YYYY-MM-DD">
         <meta name="viewport" content="width=device-width" />
-        <title>Protocols</title>
+        <title>Bb84</title>
         <link rel="stylesheet" href="./style.css" type="text/css"
          media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="./pygmentize.css" type="text/css"
@@ -32,60 +32,27 @@ MathJax = {
     <hr>
     <div class="content">
     <h1>
-<a id="qkd-protocols" class="anchor" href="#qkd-protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>QKD Protocols</h1>
-<p>Wikipedia has a <a href="https://en.wikipedia.org/wiki/List_of_quantum_key_distribution_protocols">useful
-list</a>
-of protocols that exist since BB84.</p>
-<p>The survey by Kumar &amp; Garhwal is also incredibly useful to understand the current
-landscape.</p>
-<p>In this thesis, we focus on the most important protocols in the timeline of
-entanglement based and uncertainty based protocols, and proceed chronologically.
-The intention is to explain and implement the following protocols:</p>
-<ul>
-<li>
-<a href="bb84.html">BB84</a>(implementation)
-here also the modifications made in <a href="b92.html">B92</a>
-</li>
-<li>
-<a href="e91.html">E91</a> (implementation)</li>
-<li>
-<a href="bbm92.html">BBM92</a> (implementation)
-this is the entanglement-based version of E91</li>
-<li>
-<a href="six-state-protocol.html">Six-state protocol</a> (explanation)</li>
-<li>
-<a href="sarg04.html">SARG04</a> (explanation)</li>
-<li>
-<a href="cow-protocol.html">COW protocol</a> (explanation)</li>
-<li>
-<a href="t12.html">T12</a> (explanation)</li>
-</ul>
-<h2>
-<a id="entanglement-based-protocols" class="anchor" href="#entanglement-based-protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Entanglement-based protocols</h2>
-<p>The first diQKD protocol, E91, was suggested by Ekert in 1991. There are several
-modifications made to this protocol, but they all seem to build on the same
-idea with slight changes to improve security etc. These include:</p>
-<ul>
-<li>Ekert 1991</li>
-<li>Acín et al. 2009 (based on 2006 idea)</li>
-<li>Vazirani &amp; Vidick 2019</li>
-<li>Nadlinger 2022</li>
-</ul>
-<p>The article by Zapatero et al. from 2023 summarizes the state-of-the-art in the
-field of diQKD and can be consulted to read further about the different
-implementations of the CHSH key-distribution protocol that exists.</p>
-<p>Basically, any non-local game with proven quantum advantage could be used. An
-idea here is to look into other games for which I can derive a test of
-entanglement. However, it is not clear to me how using another game could be
-advantageous. Nonetheless, it might be of interest to the community to know
-about different possibilities.</p>
-<p>There are also variations of other QKD protocols that use entanglement as an
-alternative method instead of one party being the source. These protocols include
-BB84, SSP, and SARG04.</p>
-<h2>
-<a id="uncertainty-based-protocols" class="anchor" href="#uncertainty-based-protocols" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Uncertainty-based protocols</h2>
-<p>Other protocols that do not rely on entanglement include the original BB84, BBM92,
-B92, the six-state protocol, SARG04, and the COW protocol.</p>
+<a id="bb84-protocol" class="anchor" href="#bb84-protocol" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BB84 protocol</h1>
+<p>See also <a href="b92.html">B92</a>.</p>
+<ol>
+<li>Alice creates two $n$-bit strings $a$ and $b$. She encodes the information
+as an tensor product of $n$ qubits where each individual qubit corresponds
+to one bit of $a$ and $b$ such that $b_i$ determines the encoding basis of
+$a_i$. Four mutually orthogonal basis states are used -- the Hadamard basis
+and the standard basis. The state is transmitted to Bob.</li>
+<li>Bob randomly generates a bit string $b'$ of length $n$ deciding in which
+basis to measure the qubits of the quantum state. Measurement yields a bit
+string $a'$. Bob announces that he is ready.</li>
+<li>Alice publicly announces $b$.</li>
+<li>Bob compare $b$ with $b'$ and announces which indices are equal. Alice and
+Bob both keep these bits of $a$ and $a'$, respectively, and discard the
+others thereby creating a bit string $c$.</li>
+<li>Alice randomly chooses a subset $I$ of indices of $c$, of size $k / 2$ and
+sends these to Bob.</li>
+<li>Alice and Bob compare whether their bits on these indices agree above a
+predetermined threshold. If they do, the remaining bits can be used as
+a shared secret key.</li>
+</ol>
 
     </div>
     </body>
