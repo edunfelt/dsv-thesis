@@ -65,7 +65,7 @@ between two parties, Alice and Bob, both trusted to behave according to the
 rules of the protocol. It can be assumed that an eavesdropper, Eve, is present
 and monitoring any public channel.
 
-#### BB84 {#sssec:bb84}
+#### BB84 and B92 {#sssec:bb84}
 
 The first key distribution protocol based on the principles of quantum
 mechanics was proposed by Bennet and Brassard in 1984
@@ -123,3 +123,31 @@ Note that during the point after which Alice has distributed $\ket{\psi}$ to
 Bob, we may note that Eve has no use for this state since it is not known to
 her into which bases the information has been encoded, and any attempt at
 measuring the state would result in disturbance observable by Bob.
+
+There are many modifications proposed to the original BB84 in the literature,
+see for instance [REFERENCES]. In 1992, Bennet proposed a significant
+simplification of the original protocol in @BennettQuantumCryptography1992,
+referred to as B92. In this version of the protocol, only two non-orthogonal
+states are used to encode Alice's original bit-string $a$ into the state
+$$
+\ket{psi} = \bigotimes_{i=1}^n \ket{\psi_{a_i}},
+$$ 
+where
+\begin{equation*}
+    \begin{split}
+        & \ket{\psi_0} = \ket{0} \\
+        & \ket{\psi_1} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1}.
+    \end{split}
+\end{equation*}
+Bob then measures the received qubits either in the standard basis, if $a'_i =
+0$, or in the Hadamard basis, if $a_i' = 1$. He records the outcomes in a
+bit-string $b$ in which $b_i = 1$ if a measurement was made in the standard
+basis and $\ket{0}$ was observed or if a measurement was made in the Hadamard
+basis and $\frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$ was observed, and $b_i = 0$
+otherwise.
+
+Bob then transmits $b$ and Alice and Bob both discard from $a$ and $a'$ the
+bits $i$ for which $b_i = 0$. Now, similar to the original BB84 protocol, half
+of the remaining bits can be used to check for eavesdropping before information
+reconciliation and privacy amplification can be performed. Pseudocode for B92
+is given in Figure X.
