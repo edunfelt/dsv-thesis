@@ -22,4 +22,4 @@ any simulations but discusses different physical implementations of protocols.
 Lastly, in an article from 2022, Nadlinger et al. provides an experimental
 implementation of the device-independent Ekert protocol through which a 95,628
 bit key was obtained from 1.5 million Bell pairs during eight hours
-@NadlingerEtAlExperimentalQuantum2022d.
+@NadlingerEtAlExperimentalQuantum2022.
