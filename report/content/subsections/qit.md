@@ -189,7 +189,7 @@ the $n$ individual Hilbert spaces $\mathbb{C}^2$. Such states nonetheless
 exists and are said to be *entangled*. We now give an example of such a state,
 that will be of great significance in later sections.
 
-Example (Bell-pair)
+Example ex:bell (Bell-pair)
 :   Consider the qubits $\ket{0}$ and $\ket{0}$ forming the two-qubit register
     $\ket{00}$ in $\mathbb{C}^2 \otimes \mathbb{C}^2$. To this state, we apply
     two consequtive gates -- first the Hadamard transform, and then the 

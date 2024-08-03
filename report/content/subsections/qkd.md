@@ -28,12 +28,12 @@ Theorem (The No-Cloning Theorem)
 Proof
 :   Suppose such $U$ exist so that for any $\ket{\psi}, \ket{\varphi} \in H$ 
     we have that
-    \begin{equation}
+    $$
         \begin{split}
             & \ket{\psi}\ket{0} \xmapsto{U} \ket{\psi}\ket{\psi} \\
             & \ket{\varphi}\ket{1} \xmapsto{U} \ket{\varphi}\ket{\varphi}
         \end{split}
-    \end{equation} {#eq:nocl}
+    $$ {#eq:nocl}
     Since $U$ is unitary, it preserves the inner product so we observe that it
     should hold that 
     $$
@@ -130,7 +130,7 @@ simplification of the original protocol in @BennettQuantumCryptography1992,
 referred to as B92. In this version of the protocol, only two non-orthogonal
 states are used to encode Alice's original bit-string $a$ into the state
 $$
-\ket{psi} = \bigotimes_{i=1}^n \ket{\psi_{a_i}},
+\ket{\psi} = \bigotimes_{i=1}^n \ket{\psi_{a_i}},
 $$ 
 where
 \begin{equation*}
@@ -151,3 +151,41 @@ bits $i$ for which $b_i = 0$. Now, similar to the original BB84 protocol, half
 of the remaining bits can be used to check for eavesdropping before information
 reconciliation and privacy amplification can be performed. Pseudocode for B92
 is given in Figure X.
+
+#### E91 {#sssec:e91}
+
+In 1991, Ekert proposed a new approach to QKD which utilized quantum
+entanglement to generate a shared string secure from eavesdropping
+@EkertQuantumCryptography1991a. In this QKD protocol, a Bell pair, such as the
+one we have seen in Example [](#ex:bell) is used to create a random bit-string that
+is perfectly correlated between Alice and Bob, and which is also known to
+satisfy a specific test statistic, namely Tsirelson's bound as was discussed in
+Section @ssec:games. The steps of the modification of the original Ekert
+protocol suggested in X are now presented here:
+
+Alice and Bob obtain $n$ maximally entangled qubits in the Bell state from an
+external source. Alice then generates a random $n$-bit string to represent a
+selection of measurement bases for each qubit and performs these measurements,
+documenting the outcomes in a bit-string $A$. Finally, she transmits the string
+of measurements and the outcomes to Bob.
+
+Bob similarly generates a string of length $n$ in the symbols $\{0, 1, 2\}$, where
+2 represents the same basis as Alice's 0. He performs the measurements dictated 
+by this string on his qubits and sends the string of measurements as well as the
+outcomes to Alice.
+
+Alice now randomly chooses a subset of indices of size $\frac{n}{2}$ and sends
+this choice to Bob. Both parties then compare their results on this subset of
+measurement outcomes with the Bell test statistic in order to confirm that the
+measured qubits has indeed been entangled during the course of the protocol. If
+so is the case, the qubits with a common measurement basis can be used to
+generate a shared secret key.
+
+The original version of E91 saw the use of three measurement bases for both
+Alice and Bob, $\{Z_0, Z_{\frac{\pi}{4}}, Z_{\frac{\pi}{2}}\}$ for Alice and
+$\{Z_{\frac{\pi}{4}}, Z_{\frac{\pi}{2}}, Z_{\frac{3\pi}{4}}\}$ for Bob, where
+$Z_{\theta}$ represents the basis rotated by angle $\theta$. In this case,
+there are two pairs of compatible measurement bases in which cases the measured
+results will be perfectly anticorrelated and that can be used to generate a
+key.
+
