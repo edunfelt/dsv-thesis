@@ -152,7 +152,7 @@ of the remaining bits can be used to check for eavesdropping before information
 reconciliation and privacy amplification can be performed. Pseudocode for B92
 is given in Figure X.
 
-#### E91 {#sssec:e91}
+#### E91 and BBM92 {#sssec:e91}
 
 In 1991, Ekert proposed a new approach to QKD which utilized quantum
 entanglement to generate a shared string secure from eavesdropping
@@ -186,6 +186,24 @@ Alice and Bob, $\{Z_0, Z_{\frac{\pi}{4}}, Z_{\frac{\pi}{2}}\}$ for Alice and
 $\{Z_{\frac{\pi}{4}}, Z_{\frac{\pi}{2}}, Z_{\frac{3\pi}{4}}\}$ for Bob, where
 $Z_{\theta}$ represents the basis rotated by angle $\theta$. In this case,
 there are two pairs of compatible measurement bases in which cases the measured
-results will be perfectly anticorrelated and that can be used to generate a
+results will be perfectly anticorrelated and which can be used to generate a
 key.
 
+On a similar note, an alternate version of BB84 called BBM92 was suggested by
+Bennet, Brassard, and Mermin in @BennettEtAlQuantumCryptography1992 which also
+utilize entanglement to generate the shared secret key, but which does not rely
+on Bell's theorem to check for eavesdropping such as E91. In this version of
+the protocol, Alice and Bob receive $n$ maximally entangled qubits from a
+central source and each party independently and randomly generates an $n$-bit
+string representing a choice of measurement bases between the standard basis
+and the Hadamard basis. They both then measure their qubits in their respective
+bases and publicly share their basis selections. 
+
+Alice and Bob then discard their measurement outcomes on those qubits where
+different measurement bases were used, and keep the rest, obtaining a string of
+length $k$. At this stage, they rely on the property of entanglement to ensure
+that the remaining measurement outcomes are equal. Then, Alice choose a random
+subset of $\frac{k}{2}$ indices on which they compare whether the results agree
+on a level above a predetermined threshold of allowed error. The remaining
+string of length $\frac{k}{2}$ can then be used to generate a shared secret
+key.
