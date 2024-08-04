@@ -1,3 +1,3 @@
 # Questions to ask
 
-- [ ] peer-review
+- [X] peer-review

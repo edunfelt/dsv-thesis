@@ -11,3 +11,5 @@
 - [ ] quantum cryptography
 - [ ] key distribution
 - [ ] one-time pad
+- [ ] attacks against QKD (see wikipedia for overview)
+- [ ] information reconciliation and privacy amplification

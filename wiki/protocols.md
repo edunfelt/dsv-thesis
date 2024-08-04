@@ -15,11 +15,9 @@ The intention is to explain and implement the following protocols:
   here also the modifications made in [B92](B92)
 - [E91](E91) (implementation)
 - [BBM92](BBM92) (implementation)
-  this is the entanglement-based version of E91
+  this is the entanglement-based version of BB84
 - [Six-state protocol](Six-state protocol) (explanation)
 - [SARG04](SARG04) (explanation)
-- [COW protocol](COW protocol) (explanation)
-- [T12](T12) (explanation)
 
 ## Entanglement-based protocols
 
