@@ -207,3 +207,63 @@ subset of $\frac{k}{2}$ indices on which they compare whether the results agree
 on a level above a predetermined threshold of allowed error. The remaining
 string of length $\frac{k}{2}$ can then be used to generate a shared secret
 key.
+
+#### SSP and SARG04 {#sssec:ssp}
+
+Finally, we spend some time to present two of the more notable modifications of
+BB84. These protocols will not be implemented in later sections, but are
+presented merely for the curious reader and as a reference for further
+discussion.
+
+The six-state protocol (SSP) was originally suggested in 1998 by Bruss
+@BrussOptimalEavesdropping1998 and was subsequently studied by
+Bechmann-Pasquinucci and Gisin in
+@Bechmann-PasquinucciGisinIncoherentCoherent1999. In this protocol, three
+conjugate bases are used to encode the original bit-string. The three bases
+used is the standard basis, the Hadamard basis, and the basis
+$\left\{\frac{1}{\sqrt{2}}(\ket{0} + i\ket{1}), \frac{1}{\sqrt{2}}(\ket{0} -
+i\ket{1})\right\}$. Bruss showed that this modification increased the resistance to
+eavesdropping since Eve in this scenario has lower probability, namely
+$\frac{1}{3}$, of guessing the right basis used by Alice for measurement. By
+the same property, the resulting key will be smaller than in BB84 for the
+number of bits encoded as $\frac{2}{3}$rds of the generated qubits will be
+discarded. Furthermore, using more than three conjugate bases for encoding does
+not yield any further increase in security as the three bases used in SSP
+already span the entire space of $\mathbb{C}^2$.
+
+Another notable modification of BB84 is SARG04, first proposed by Scarani et
+al. @ScaraniEtAlQuantumCryptography2004, which was developed with the intended
+purpose to be more secure against photon number splitting (PNS) attacks
+compared to BB84. A PNS attack allows Eve to measure qubits transmitted by
+Alice in the correct basis without introducing any detectable errors. This is
+possible due to a practical implementation of QKD protocols in which weak laser
+pulses are used to distribute photons through a quantum channel consisting of
+optical fibers. In such implementations, the laser pulses contain about 0.1
+photons following a Poisson distribution. Under this distribution, most pulses
+will contain no photons at all, some will contain exactly one photon, and
+others will contain more than one photons. It is this last possibility that
+introduces a possibility for attack. In this case, Eve may intercept the
+traffic, keep the excess photons to herself and distribute the remaining one to
+Bob. When Alice then presents the basis used for encoding, Eve can measure the
+captured qubits in the correct basis and obtain information about the key while
+remaining undetected since she is no longer constrained by the no-cloning
+theorem. See Figure X for a visual representation of a PNS attack.
+
+The SARG04 protocol tackles this possibility by changing the basis
+reconciliation step of the original BB84 protocol. In SARG04, Alice uses the
+same encoding states as in BB84 and transmits the state $\ket{\psi}$ to Bob.
+Again, Bob announces that he has received the state and generates his own
+bit-string $b' \in \{0, 1\}^n$ by which he measures the received qubits. Now,
+for each qubit, Alice prepares two qubits to send to Bob -- one in the standard
+basis and one in the Hadamard basis, such that the corresponding qubit is
+either one of these states. With this piece of information along with his
+result of the original measurement, Bob now knows that the qubit he received
+initially was in either one of these states. If his measurement result was
+inconsistent with one of the two states, he may deduce the state of the
+original qubit which is now a shared secret between the two parties. He may
+then announce to Alice that the bit is valid. If on the other hand, his result
+is consistent with both states, he announces to Alice that the bit is invalid.
+Finally, on the bits still remaining after this procedure, Alice and Bob may
+proceed as in the original BB84 protocol. Table X shows the possible
+transmissions by Alice in the basis reconciliation step, and in which cases Bob
+may deduce that a bit is valid.
