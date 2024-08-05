@@ -76,7 +76,7 @@ self-destructive messages and on creating unforgeable tokens. In this setting,
 as is assumed in most QKD protocols, the parties, often referred to as Alice
 and Bob, have access to a quantum channel as well as a classical channel. We
 now describe the steps of the key distribution protocol, a description in
-pseudocode is also given in Figure X. 
+is also given in Table @tbl:bb84. 
 
 To initiate the protocol, Alice generates two random bit-strings, $a, b \in
 \{0, 1\}^{n}$, of length $n$. Both strings are subsequently encoded into a
@@ -119,6 +119,22 @@ $\varepsilon$ instances. Lastly, privacy amplification and information reconcili
 is performed on the remaining $n / 4$ bits in order to obtain a shared secret
 key of length $k$.
 
+\footnotesize
+|    | Alice                                                                                                                                                                                                                                                                                  | Bob                                                                                                  |
+|-|----------------|----------------|
+| 1. | Generate $a, b \in_r \{0, 1\}^n$                                                                                                                                                                                                                                                       |                                                                                                      |
+| 2. | Initialize and transmit the quantum state: $\ket{\psi} = \bigotimes_{i=1}^n \ket{\psi_{a_ib_i}}$ by $\ket{\psi_{00}} = \ket{0}$, $\ket{\psi_{10}} = \ket{1}$, $\ket{\psi_{01}} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$, and $\ket{\psi_{11}} = \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$ |                                                                                                      |
+| 3. |                                                                                                                                                                                                                                                                                        | Generate $b' \in_r \{0, 1\}^n$ and announce that $\ket{\psi}$ was received                           |
+| 4. |                                                                                                                                                                                                                                                                                        | Measure $\ket{\psi}$ according to $b'$ and obtain the result $a' \in \{0, 1\}^n$                     |
+| 5. | Announce $b$                                                                                                                                                                                                                                                                           |                                                                                                      |
+| 6. | Discard those $a_i$ for which $b_i \neq b_i'$, abort if the result has less than $\frac{n}{2}$ bits                                                                                                                                                                                    | Discard those $a_i'$ for which $b_i \neq b_i'$, abort if the result has less than $\frac{n}{2}$ bits |
+| 7. | Generate $I \subset_r [k]$ such that $|I| = \frac{k}{2}$ and transmit $I$ to Bob                                                                                                                                                                                                  |                                                                                                      |
+| 8. | Abort if $|\{a_i \neq a_i'\ |\ i \in I\}| > \varepsilon$                                                                                                                                                                                                                            | Abort if $|\{a_i \neq a_i'\ |\ i \in I\}| > \varepsilon$                                          |
+| 9. | Discard all $a_i$ for which $i \in I$ and perform postprocessing                                                                                                                                                                                                                       | Discard all $a_i'$ for which $i \in I$ and perform postprocessing                                    |
+
+Table: The BB84 protocol. {#tbl:bb84}
+
+\normalsize
 Note that during the point after which Alice has distributed $\ket{\psi}$ to
 Bob, we may note that Eve has no use for this state since it is not known to
 her into which bases the information has been encoded, and any attempt at
@@ -149,9 +165,25 @@ otherwise.
 Bob then transmits $b$ and Alice and Bob both discard from $a$ and $a'$ the
 bits $i$ for which $b_i = 0$. Now, similar to the original BB84 protocol, half
 of the remaining bits can be used to check for eavesdropping before information
-reconciliation and privacy amplification can be performed. Pseudocode for B92
-is given in Figure X.
+reconciliation and privacy amplification can be performed. A condensed
+description of B92 is given in Table @tbl:b92.
 
+\footnotesize
+|    | Alice                                                                                                                                                                                 | Bob                                                                                                                                                                                                                         |
+|-|----------------|----------------|
+| 1. | Generate $a \in_r \{0, 1\}^n$                                                                                                                                                         |                                                                                                                                                                                                                             |
+| 2. | Initialize and transmit the quantum state: $\ket{\psi} = \bigotimes_{i=1}^n \ket{\psi_{a_i}}$ by $\ket{\psi_{0}} = \ket{0}$, $\ket{\psi_{1}} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$ |                                                                                                                                                                                                                             |
+| 3. |                                                                                                                                                                                       | Generate $a' \in_r \{0, 1\}^n$ and announce that $\ket{\psi}$ was received                                                                                                                                                  |
+| 4. |                                                                                                                                                                                       | Measure $\ket{\psi}$ according to $a'$ and record the results in $b$ so that $b_i=1$ if $a_i'=0$ and the outcome was $\ket{0}$ or $a_i'=1$ and the outcome was $\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$, and $b_i=0$ otherwise |
+| 5. |                                                                                                                                                                                       | Transmit $b$                                                                                                                                                                                                                |
+| 6. | Discard those $a_i$ for which $b_i = 0$, abort if the result has less than $\frac{n}{2}$ bits                                                                                         | Discard those $a_i'$ for which $b_i = 0$, abort if the result has less than $\frac{n}{2}$ bits                                                                                                                              |
+| 7. | Generate $I \subset_r [k]$ such that $|I| = \frac{k}{2}$ and transmit $I$ to Bob                                                                                                 |                                                                                                                                                                                                                             |
+| 8. | Abort if $|\{a_i \neq a_i'\ |\ i \in I\}| > \varepsilon$                                                                                                                           | Abort if $|\{a_i \neq a_i'\ |\ i \in I\}| > \varepsilon$                                                                                                                                                                 |
+| 9. | Discard all $a_i$ for which $i \in I$ and perform postprocessing                                                                                                                      | Discard all $a_i'$ for which $i \in I$ and perform postprocessing                                                                                                                                                           |
+
+Table: The B92 protocol. {#tbl:b92}
+
+\normalsize
 #### E91 and BBM92 {#sssec:e91}
 
 In 1991, Ekert proposed a new approach to QKD which utilized quantum
@@ -189,6 +221,20 @@ there are two pairs of compatible measurement bases in which cases the measured
 results will be perfectly anticorrelated and which can be used to generate a
 key.
 
+\footnotesize
+|    | Alice                                                                                                                                                             | Bob                                                                                                                                                               |
+|-|----------------|----------------|
+| 0. | Prepare $n$ pairs of maximally entangled qubits and distribute one qubit from each pair to Alice and Bob                                                          |                                                                                                                                                                   |
+| 1. | Generate $X \in_r \{0, 1\}^n$ and measure the qubits accordingly, document the result in $A \in \{0, 1\}^n$                                                       | Generate $Y \in_r \{0, 1, 2\}^n$ and measure the qubits accordingly, document the result in $B \in \{0, 1\}^n$                                                    |
+| 2. | Send $X$ and $A$ to Bob                                                                                                                                           | Send $Y$ and $B$ to Alice                                                                                                                                         |
+| 3. | Generate $I \subset_r [n-1]$ such that $|I| = \frac{n}{2}$ and transmit $I$ to Bob                                                                              |                                                                                                                                                                   |
+| 4. | Compute $T = \{i \in I\ |\ y_i \neq 2\}$ and $U = \{i \in I\ |\ x_i = 0, y_i = 2\}$                                                                             | Compute $T = \{i \in I\ |\ y_i \neq 2\}$ and $U = \{i \in I\ |\ x_i = 0, y_i = 2\}$                                                                             |
+| 5. | Abort if $\frac{|\{i \in T\ |\ x_i \land y_i = a_i \oplus b_i\}|}{|T|} > \varepsilon_1$ or $\frac{|\{i \in U\ |\ a_i \neq b_i\}|}{|U|} > \varepsilon_2$ | Abort if $\frac{|\{i \in T\ |\ x_i \land y_i = a_i \oplus b_i\}|}{|T|} > \varepsilon_1$ or $\frac{|\{i \in U\ |\ a_i \neq b_i\}|}{|U|} > \varepsilon_2$ |
+| 6. | Perform postprocessing steps on $\{i \notin I\ |\ x_i = 0, y_i = 2\}$                                                                                            | Perform postprocessing steps on $\{i \notin I\ |\ x_i = 0, y_i = 2\}$                                                                                            |
+
+Table: The E91 protocol. {#tbl:e91}
+
+\normalsize
 On a similar note, an alternate version of BB84 called BBM92 was suggested by
 Bennet, Brassard, and Mermin in @BennettEtAlQuantumCryptography1992 which also
 utilize entanglement to generate the shared secret key, but which does not rely
@@ -208,6 +254,20 @@ on a level above a predetermined threshold of allowed error. The remaining
 string of length $\frac{k}{2}$ can then be used to generate a shared secret
 key.
 
+\footnotesize
+|    | Alice                                                                                                       | Bob                                                                                                         |
+|-|----------------|----------------|
+| 0. | Prepare $n$ pairs of maximally entangled qubits and distribute one qubit from each pair to Alice and Bob    |                                                                                                             |
+| 1. | Generate $X \in_r \{0, 1\}^n$ and measure the qubits accordingly, document the result in $A \in \{0, 1\}^n$ | Generate $Y \in_r \{0, 1\}^n$ and measure the qubits accordingly, document the result in $B \in \{0, 1\}^n$ |
+| 2. | Send $X$ to Bob                                                                                             | Send $Y$ to Alice                                                                                           |
+| 3. | Discard those $a_i$ for which $x_i \neq y_i$                                                                | Discard those $b_i$ for which $x_i \neq y_i$                                                                |
+| 4. | Generate $I \subset_r [k]$ such that $|I| = \frac{k}{2}$ and transmit $I$ to Bob                                                                                                                                                                                                  |                                                                                                      |
+| 5. | Abort if $|\{a_i \neq b_i\ |\ i \in I\}| > \varepsilon$                                                                                                                                                                                                                            | Abort if $|\{a_i \neq b_i\ |\ i \in I\}| > \varepsilon$                                          |
+| 6. | Discard all $a_i$ for which $i \in I$ and perform postprocessing                                                                                                                                                                                                                       | Discard all $b_i$ for which $i \in I$ and perform postprocessing                                    |
+
+Table: The BBM92 protocol. {#tbl:bbm92}
+
+\normalsize
 #### SSP and SARG04 {#sssec:ssp}
 
 Finally, we spend some time to present two of the more notable modifications of
