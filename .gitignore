@@ -2,3 +2,4 @@ env
 report/assets/filters/__pycache__
 *.pdf
 !/report/build/*.pdf
+.jukit
